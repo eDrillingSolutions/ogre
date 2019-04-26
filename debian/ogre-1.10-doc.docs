@@ -1,8 +1,8 @@
 BUGS
-Docs/CodingStandards.html
-Docs/ogre-logo.gif
-Docs/ReadMe.html
-Docs/style.css
+#Docs/CodingStandards.html
+#Docs/ogre-logo.gif
+#Docs/ReadMe.html
+#Docs/style.css
 # installed with .install file
 #Docs/licenses
 #Docs/manual
