@@ -1,0 +1,20 @@
+Description: Fix problem building GLES2 in big endian architectures
+ Copied value for pre-processor variable GL_UNSIGNED_INT_8_8_8_8_REV from
+ GL/gl.h and GL/glext.h to fix building problem in big endian architectures, and
+ reported upstream so they will hopefully fix it in a better way.
+Author: Manuel A. Fernandez Montecelo <mafm@debian.org>
+Last-Update: 2014-09-20
+Forwarded: https://ogre3d.atlassian.net/browse/OGRE-429
+
+--- a/RenderSystems/GLES2/src/OgreGLES2PixelFormat.cpp
++++ b/RenderSystems/GLES2/src/OgreGLES2PixelFormat.cpp
+@@ -242,6 +242,9 @@
+                 return GL_UNSIGNED_SHORT_5_5_5_1;
+ 
+ #if OGRE_ENDIAN == OGRE_ENDIAN_BIG
++#ifndef GL_UNSIGNED_INT_8_8_8_8_REV
++#define GL_UNSIGNED_INT_8_8_8_8_REV	0x8367
++#endif
+             case PF_X8B8G8R8:
+             case PF_X8R8G8B8:
+             case PF_A8B8G8R8:
