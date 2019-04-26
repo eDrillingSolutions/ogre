@@ -25,7 +25,7 @@ DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 
 # Use this variable to define the particular version of OGRE that we're building
-OGRE_VERSION=1.10.0
+OGRE_VERSION=1.10.12
 
 OGRE_CHANGELOG = Docs/ChangeLog.html
 
@@ -113,12 +113,12 @@ override_dh_install-arch:
 
 override_dh_install-indep:
         # remove .md5, .map and other files that we do not want installed
-	find debian/tmp/usr/share/OGRE/docs/api/html -type f -not \( -iname '*.html' -or -iname '*.png' -or -iname '*.css' -or -iname '*.js' \) -exec rm -fv {} \;
+	#find debian/tmp/usr/share/OGRE/docs/api/html -type f -not \( -iname '*.html' -or -iname '*.png' -or -iname '*.css' -or -iname '*.js' \) -exec rm -fv {} \;
 
 	dh_install -i --list-missing
 
-override_dh_installchangelogs:
-	dh_installchangelogs -- $(OGRE_CHANGELOG)
+#override_dh_installchangelogs:
+#	dh_installchangelogs -- $(OGRE_CHANGELOG)
 
 override_dh_strip:
 	dh_strip -plibogre-$(OGRE_VERSION) --dbg-package=libogre-$(OGRE_VERSION)-dbg
