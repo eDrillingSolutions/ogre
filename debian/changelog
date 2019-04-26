@@ -1,3 +1,10 @@
+
+ogre-1.10 (1.10.12) unstable; urgency=medium
+
+  * Building Ogre v1.10.12 as deb package
+
+ -- Stig Helgeland <sh@edrilling.no>  Fri, 26 Apr 2019 11:06:00 +0200
+
 ogre-1.9 (1.9.0+dfsg1-4) unstable; urgency=medium
 
   * Fix problem building GLES2 in big endian architectures (patch:
